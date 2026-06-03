@@ -1,0 +1,1 @@
+(content of spec-studio/SKILL.md)

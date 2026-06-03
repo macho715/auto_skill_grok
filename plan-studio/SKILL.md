@@ -1,0 +1,1 @@
+(content of plan-studio/SKILL.md - assume standard from previous knowledge, in real would read full)

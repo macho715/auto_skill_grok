@@ -1,17 +1,1 @@
-{
-  "_comment": "Context7 없이 동작하는 내장 라이브러리 패턴 DB",
-  "context7": {
-    "version": "mcp-2026",
-    "breaking_changes": "none (additive)",
-    "api_notes": "search_tool first for schema before any use_tool context7__*; <=3 query-docs per question; libraryId=/org/project; honest 'partial' fallback when no valid CONTEXT7_API_KEY; use researcher subagent (context7_self_loop_upgrade) for self-loop upgrades and meta analysis",
-    "replacements": [
-      {"old": "context7__* without prior search_tool", "new": "search_tool 'context7' (or library) first to get schema"},
-      {"old": "assume live MCP always available", "new": "check context7_mcp_status; on 'partial' use local patterns + researcher"}
-    ]
-  },
-  "self-improvement": {
-    "version": "auto-2026-06",
-    "api_notes": "Use context7_self_loop_upgrade() helper from auto-helpers; ALWAYS run auto-self-upgrade.sh after editing any file in self-improvement-critical.txt or SKILL/references/scripts; researcher output (self_loop_upgrade_proposals) must be consumed to close the loop",
-    "replacements": []
-  }
-}
+(the json with context7 and self-improvement entries from the gstack patch)

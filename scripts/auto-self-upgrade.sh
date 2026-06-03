@@ -1,0 +1,1 @@
+(full content from read - the self upgrade script with gstack notes and state dir fix)
