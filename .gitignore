@@ -1,23 +1,21 @@
-# gstack runtime dep (cloned locally for junctions/integration)
-gstack-main/
+# gstack full source is via submodule (gstack/)
+# Vendored used mstack SKILLs are in gstack/ dir (careful/, review/, etc.)
+# Do not ignore gstack/ - it contains the files auto skill maps to mstack-*
 
 # OS / editor
 .DS_Store
 Thumbs.db
 
-# logs and temp from runs
-*.log
-retro-*.md
-
-varlock-*.log
-
-# node / bun if any
-node_modules/
-
-# python
+# Python
 __pycache__/
 *.pyc
 
-# test outputs
+# Logs from local runs (not committed)
+*.log
+
+# node/bun
+node_modules/
+
+# test outputs if any
 coverage/
 .nyc_output/

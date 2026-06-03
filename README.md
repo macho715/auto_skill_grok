@@ -4,28 +4,38 @@ Grok-native 'auto' self-improving SDLC skill with gstack (https://github.com/gar
 
 ## Installation
 
-Clone with submodules:
 git clone --recurse-submodules https://github.com/macho715/auto_skill_grok.git
 
-Or after clone:
-git submodule update --init --recursive
+The gstack/ directory contains the core SKILL.md files for the mstack stages that auto uses (careful/, review/, qa/, ship/, investigate/, retro/, autoplan/ for plan, etc.).
 
-Then place/symlink the auto/ dir to your Grok skills location (~/.grok/skills/auto).
+The full gstack is available via the submodule at gstack/ (after submodule update).
 
-The mstack-* skills are provided by the gstack submodule (careful/, review/, qa/, ship/, investigate/, retro/, autoplan/, etc.).
+Place or symlink the auto/ content to your ~/.grok/skills/auto/.
 
-Junctions or copies are used in installed locations to point to gstack/ subdirs.
+Junctions or copies in installed skills point mstack-* to the gstack sub skills.
 
-See SKILL.md for full details, including the actual pipeline run + gstack integration verification.
+See SKILL.md for the full M-Stack (gstack) section, including the actual pipeline execution and parallel review/patch verification that was performed.
 
-## gstack Integration
+## gstack Files Used by Auto
 
-- gstack is included as submodule.
-- Local dev copy may be at gstack-main/ in source.
-- Used stages: careful, plan (autoplan), review, qa, ship, investigate, retro, etc.
+- gstack/SKILL.md : main gstack framework
+- gstack/careful/SKILL.md : mstack-careful
+- gstack/review/SKILL.md : mstack-review
+- gstack/qa/SKILL.md : mstack-qa
+- gstack/ship/SKILL.md : mstack-ship
+- gstack/investigate/SKILL.md : mstack-investigate
+- gstack/retro/SKILL.md : mstack-retro
+- gstack/autoplan/SKILL.md : mstack-plan
 
-## Recent Work
-- Full auto pipeline executed with gstack mstack.
-- Parallel review and QA subagents.
-- Patches applied and verified.
-- All skill files + gstack reference uploaded.
+(And others like guard, freeze if used in careful flows.)
+
+These are the files uploaded alongside the auto skill for complete self-contained usage.
+
+## Recent Patches
+- Integrated gstack as mstack.
+- Actual auto pipeline run with parallel subagents for review and QA.
+- Patches applied from review feedback.
+- All verified PASS.
+- Retro and logs included.
+
+Run auto-self-upgrade after any edits to auto files.
