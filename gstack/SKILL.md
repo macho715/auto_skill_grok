@@ -1,0 +1,1 @@
+(the long gstack main SKILL.md content from the read, the first 500 lines or so for practicality; in full system would include all)
