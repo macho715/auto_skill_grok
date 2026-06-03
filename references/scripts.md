@@ -12,7 +12,7 @@
 | `varlock-scan.sh` | 시크릿 스캔 | 0=PASS 1=WARN 2=BLOCK |
 | `karpathy-gate.sh` | 수술적 변경 검사 | 0=PASS 1=WARN 2=BLOCK |
 | `plan-enricher.sh` | Context7 보강 | 0=불필요 1=조회필요 |
-| `context7-bridge.sh` | Context7 자율 브릿 | 0=완료 |
+| `context7-bridge.sh` | Context7 자율 브릿지 | 0=완료 |
 
 ## Self-Improve 스크립트
 | 스크립트 | 역할 |
@@ -57,3 +57,14 @@ step_retro_and_improve: scorer·reflex        → 동시 실행
 폴더:
 - `plan-studio/` — 플랜 문서 보관
 - `spec-studio/` — 스펙 문서 보관
+
+## Superpowers / Brainstorming (2026-06 추가)
+| 폴더/파일 | 역할 |
+|-----------|------|
+| `brainstorming/SKILL.md` | creative pre-design 스킬 (design → approval → writing-plans 전이) |
+| `brainstorming/visual-companion.md` + `scripts/` | mockup/diagram browser companion (node server) |
+| `brainstorming/spec-document-reviewer-prompt.md` | 내부 spec self-review 프롬프트 |
+
+- plan-studio/ 와 동일 레벨 번들 (auto 스킬 설치 시 함께 제공).
+- pipelines.md 의 FEATURE brainstorm 단계에서 참조.
+- SKILL.md 에 **Superpowers (brainstorming)** 노트 추가.

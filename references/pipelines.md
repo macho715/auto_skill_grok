@@ -9,7 +9,8 @@
 | 0.5 | **scan-learn** | `learn-logger.sh scan` + `context-handoff.sh check` |
 | 1 | **careful** | `/mstack-careful` + `varlock-scan.sh` |
 | 2 | **dispatch** | git diff 파일 수 → SINGLE/SUBAGENT/AGENT_TEAMS |
-| 3 | **plan** | `/mstack-plan` → Phase 1 자동 승인 |
+| 2.5 | **brainstorm** (선택, creative) | plan.md 없을 때 + "새 프로젝트"/FEATURE creative → `/brainstorming` (design 제시 + user 승인 → writing-plans) |
+| 3 | **plan** | `/mstack-plan` (또는 studio merge / brainstorming 결과) → Phase 1 자동 승인 |
 | 3.5 | **plan-enrich** | `plan-enricher.sh` → Context7 MCP (또는 local patterns + proxy) → plan.md 보강 |
 |     |                 | ⚠ MCP는 환경 의존적. 미가용 시 local fallback 우선 (virtual test 2026-06 검증) |
 | 4 | **implement** | `parallel-implement.sh` — TDD (RED→GREEN→REFACTOR) |
@@ -64,7 +65,7 @@ auto-run.sh --learn     # 학습 로그
 ---
 ## Plan Studio / Spec Studio 자동 병합
 
-`plan.md`가 없을 해 자동으로 탐색하는 폴더:
+`plan.md`가 없을 때 자동으로 탐색하는 폴더:
 
 ```
 ~/.claude/skills/auto/
@@ -101,3 +102,32 @@ cp requirements.md ~/.claude/skills/auto/spec-studio/
 ```bash
 bash ~/.claude/skills/auto/scripts/plan-studio-merge.sh [프로젝트경로]
 ```
+
+## Superpowers / Brainstorming 번들 (2026-06 추가)
+
+`brainstorming` 스킬은 creative 작업(새 프로젝트, 기능/컴포넌트 추가, 동작 수정 등) **반드시 사전** 단계로 사용. plan-studio/ 와 동일하게 auto 스킬 루트에 번들:
+
+```
+~/.claude/skills/auto/
+├── brainstorming/          ← superpowers-main 에서 추가
+│   ├── SKILL.md
+│   ├── visual-companion.md
+│   ├── spec-document-reviewer-prompt.md
+│   └── scripts/ (server + html/js for mockups)
+├── plan-studio/
+└── spec-studio/
+```
+
+### 사용 규칙 (pipelines + SKILL.md 반영)
+- "새 프로젝트", "기능 추가", "디자인", "컴포넌트" 등 creative FEATURE → dispatch 후 plan 전 **/brainstorming** 우선 (HARD-GATE: design 승인 전 구현 금지).
+- brainstorming 완료 → design doc 생성 + user review → writing-plans 호출 → plan.md 생성 → auto plan 단계로 이어짐.
+- plan.md 이미 있거나 FAST/BUGFIX → 생략 가능 (plan-studio merge fallback 유지).
+- visual companion: 질문이 visual (mockup, layout) 일 때만 browser offer (text-only 질문은 terminal).
+
+### 소스 위치 (이 워크스페이스)
+C:\Users\SAMSUNG\Downloads\auto_grok\brainstorming (plan-studio/add-brainstorming-to-auto-plan.md 로 계획 수립 후 복사)
+
+### 주의
+- brainstorming 은 interactive (AskUserQuestion 다수 + incremental approval). auto-run.sh bash 레벨에서는 안내만, 실제 호출은 AI 스킬 단계에서 `/brainstorming`.
+- 내부 경로 가정: 설치 후 `~/.claude/skills/auto/brainstorming/...` 로 동작.
+- writing-plans 는 별도 (이 추가 범위 외).
