@@ -1,1 +1,1 @@
-(investigate SKILL) 
+(investigate SKILL.md) 

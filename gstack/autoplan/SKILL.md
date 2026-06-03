@@ -1,1 +1,1 @@
-(autoplan for plan) 
+(autoplan/SKILL.md for mstack-plan) 

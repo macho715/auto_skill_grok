@@ -1,1 +1,1 @@
-(the review/SKILL.md content we read, key parts) 
+(the review SKILL.md key content from the read, including preamble, scope, specialists, etc. - the parts used for mstack-review in auto) 

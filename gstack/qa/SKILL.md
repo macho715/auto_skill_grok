@@ -1,1 +1,1 @@
-(qa SKILL from gstack-main) 
+(qa SKILL.md from gstack-main for mstack-qa) 
