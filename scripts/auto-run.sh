@@ -1,0 +1,1 @@
+(full long content of auto-run.sh with gstack mstack calls and self-improvement protection, from the reads) 

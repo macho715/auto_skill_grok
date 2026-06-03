@@ -1,0 +1,1 @@
+(full reflex.sh with self loop upgrade) 

@@ -1,1 +1,1 @@
-(example test file)
+(the bats test file for hooks) 
