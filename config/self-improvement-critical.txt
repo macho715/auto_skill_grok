@@ -1,0 +1,20 @@
+# AUTO 스킬 Self-Improvement 보호 대상 파일 목록
+# 이 파일에 listed된 파일이 수정되면 FAST 모드에서 강제 plan-enrich가 트리거됨
+# (가상 테스트 2026-06 결과 반영)
+
+scripts/lib/otel-setup.sh
+tests/hooks.bats
+scripts/plan-enricher.sh
+scripts/context7-bridge.sh
+config/context7-patterns.json
+scripts/auto-run.sh
+SKILL.md
+references/pipelines.md
+references/gates.md
+scripts/reflex.sh
+scripts/self-loop-upgrader.sh
+scripts/auto-self-upgrade.sh
+scripts/learn-logger.sh
+scripts/lib/auto-helpers.sh
+scripts/lib/context7-researcher.md
+config/self-improvement-critical.txt

@@ -1,0 +1,23 @@
+# gstack runtime dep (cloned locally for junctions/integration)
+gstack-main/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# logs and temp from runs
+*.log
+retro-*.md
+
+varlock-*.log
+
+# node / bun if any
+node_modules/
+
+# python
+__pycache__/
+*.pyc
+
+# test outputs
+coverage/
+.nyc_output/
