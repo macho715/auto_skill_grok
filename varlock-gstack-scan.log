@@ -1,0 +1,7 @@
+=== Varlock scan for gstack integration (background task result) ===
+Scanned: 501 files
+WARN [Entropy]: 3 (high entropy strings flagged - sentinel-tok..., base64 sample dGhlIHNhbXBs..., sb_publishab... )
+These are in gstack-main (test fixtures, .env.example, sample tokens) - not in our auto changes (docs, junctions, basic shims).
+BLOCK: 0
+Status: WARN only (expected for large clone with examples). No real secrets in custom integration work.
+Per quick pattern scan + subagent: clean for our files.
