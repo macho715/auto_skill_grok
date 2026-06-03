@@ -4,24 +4,28 @@ Grok-native 'auto' self-improving SDLC skill with gstack (https://github.com/gar
 
 ## Installation
 
-For Grok TUI:
-- Place the contents under `~/.grok/skills/auto/`
-- The mstack-* are registered globally via junctions or copies pointing to gstack-main or installed gstack.
+Clone with submodules:
+git clone --recurse-submodules https://github.com/macho715/auto_skill_grok.git
 
-See SKILL.md for usage (FEATURE, BUGFIX, FAST pipelines).
+Or after clone:
+git submodule update --init --recursive
+
+Then place/symlink the auto/ dir to your Grok skills location (~/.grok/skills/auto).
+
+The mstack-* skills are provided by the gstack submodule (careful/, review/, qa/, ship/, investigate/, retro/, autoplan/, etc.).
+
+Junctions or copies are used in installed locations to point to gstack/ subdirs.
+
+See SKILL.md for full details, including the actual pipeline run + gstack integration verification.
 
 ## gstack Integration
 
-- mstack-careful, mstack-plan (autoplan), mstack-review, mstack-qa, mstack-ship, mstack-investigate, mstack-retro are wired to gstack sub-skills.
-- Local gstack source: gstack-main/ (cloned for live junctions).
-- Basic shims for mstack-dispatch, mstack-pipeline, mstack-implement.
+- gstack is included as submodule.
+- Local dev copy may be at gstack-main/ in source.
+- Used stages: careful, plan (autoplan), review, qa, ship, investigate, retro, etc.
 
-## Recent Patches (actual auto run + parallel review/QA)
-- Full pipeline executed with todos, careful (varlock), parallel subagents for review + QA.
-- Patches applied from review (docs credits, cleanups, mstack-implement added).
-- Verified PASS.
-- Retro and logs included.
-
-See retro-gstack-integration.md and varlock-gstack-scan.log for details.
-
-Self-upgrade rule: after edits to auto files, run auto-self-upgrade.ps1 (or .sh).
+## Recent Work
+- Full auto pipeline executed with gstack mstack.
+- Parallel review and QA subagents.
+- Patches applied and verified.
+- All skill files + gstack reference uploaded.
